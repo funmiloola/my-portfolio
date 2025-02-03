@@ -1,5 +1,12 @@
 <template>
   <div>
+    <nav>
+      <ul>
+        <li v-for="(nav, index) in navs" :key="index">
+          <a id="nav.id" @click="scrollToSection(nav.id)">{{ nav.name }}</a>
+        </li>
+      </ul>
+    </nav>
     <div class="hero-section">
       <div class="hero">
         <h1>Hi, I am <span>FAVOUR</span></h1>
@@ -13,16 +20,14 @@
         />
       </div>
     </div>
-    <div class="about-section">
+    <section>
+    <div class="about-section" id="about" >
       <h3>About Me</h3>
       <p>
-        I am a fourth-year computer science student who explored web development
-        in 2023, acquiring robust expertise in HTML,CSS,JAVASCRIPT and
-        VUEJS.Outside of my studies and classes, I engage in coding and
-        continuous learning to stay abreast of the latest development trends.
+        I am a fresh graduate of Computer Science, and I have a strong background in web development technologies. I started my journey into the developments in 2023, where I learnt about JavaScript, Vue.js, CSS, HTML, and Tailwind CSS. Currently, I am diving into React, expanding my skills and knowledge in frontend development. I am passionate about creating innovative user interfaces and enhancing user experiences through technology.
       </p>
 
-      <div class="skills">
+      <div class="skills" id="skills" >
         <div><h4>SKILLS</h4></div>
         <div class="logos">
           <div v-for="(logo, index) in logos" :key="index" class="logo">
@@ -32,7 +37,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div id="projects" >
       <h5>Projects</h5>
       <div class="project-section">
         <div class="project">
@@ -41,9 +46,12 @@
             alt=""
             class="project-image"
           />
+                    <a href="https://space-tourism-4jxb.onrender.com/" target="_blank"  class="project-desc">Space tourism website</a>
           <a
-            href="https://github.com/funmiloola/space-tourism-website-design.git" target="_blank" class="project-desc"
-            >Space tourism website</a
+            href="https://github.com/funmiloola/space-tourism-website-design.git"
+            target="_blank"
+            class="project-desc"
+            >Space tourism website repository</a
           >
         </div>
         <div class="project">
@@ -52,8 +60,14 @@
             alt=""
             class="project-image"
           />
-          <a href="https://github.com/funmiloola/Ecommerce-project.git" target="_blank"  class="project-desc"
-            >Ecommerce single page</a
+          <a href="https://ecommerce-project-gtcm.onrender.com/" target="_blank" class="project-desc">
+           Ecommerce single page
+          </a>
+          <a
+            href="https://github.com/funmiloola/Ecommerce-project.git"
+            target="_blank"
+            class="project-desc"
+            >Ecommerce single page repository</a
           >
         </div>
         <div class="project">
@@ -62,21 +76,30 @@
             alt=""
             class="project-image"
           />
-          <a href="https://github.com/funmiloola/freahfarm-product-deisgn.git" target="_blank" class="project-desc"
-            >Freshfarm landing page</a
+          <a href="https://freshfarm-product-page.onrender.com/" target="_blank" class="project-desc">
+          Freshfarm landing page
+          </a>
+          <a
+            href="https://github.com/funmiloola/freahfarm-product-deisgn.git"
+            target="_blank"
+            class="project-desc"
+            >Freshfarm landing page repository</a
           >
         </div>
       </div>
     </div>
-    <div class="contacts">
+    <div class="contacts" id="contacts">
       <h6>Contact Me</h6>
       <div class="contact-section">
-        <div v-for="(contact,index) in contacts" :key="index" class="contact">
-          <img :src="contact.image" alt=""  class="contact-logo"/>
-          <a :href="contact.link" target="_blank" class="contact-desc">{{contact.name}}</a>
+        <div v-for="(contact, index) in contacts" :key="index" class="contact">
+          <img :src="contact.image" alt="" class="contact-logo" />
+          <a :href="contact.link" target="_blank" class="contact-desc">{{
+            contact.name
+          }}</a>
         </div>
       </div>
     </div>
+    </section>
   </div>
 </template>
 <script>
@@ -97,32 +120,80 @@ export default {
           name: "VUEJS",
           image: require("@/assets/images/icons/icons8-vuejs.svg"),
         },
-      ],
-      contacts:[
         {
-          image:require("@/assets/images/icons/icons8-instagram-logo.svg"),
-          link:"https://www.instagram.com/fun.mii_?igsh=NXJ4ZG5weGE5d2ty&utm_source=qr",
-          name:"Instagram Profile"
-        },
-        {
-          image:require("@/assets/images/icons/icons8-linkedin.svg"),
-          link:"https://www.linkedin.com/in/adebiyi-favour-7a7845240/",
-          name:"LinkedIn Profile"
-        },
-        {
-           image:require("@/assets/images/icons/icons8-twitter.svg"),
-          link:"https://twitter.com/Favvvy04",
-          name:"Twitter Profile"
+          name:"TAILWINDCSS",
+          image: require("@/assets/images/icons/tailwindcss.svg"),
         }
-      ]
+      ],
+      contacts: [
+        {
+          image: require("@/assets/images/icons/icons8-instagram-logo.svg"),
+          link: "https://www.instagram.com/fun.mii_?igsh=NXJ4ZG5weGE5d2ty&utm_source=qr",
+          name: "Instagram Profile",
+        },
+        {
+          image: require("@/assets/images/icons/icons8-linkedin.svg"),
+          link: "https://www.linkedin.com/in/adebiyi-favour-7a7845240/",
+          name: "LinkedIn Profile",
+        },
+        {
+          image: require("@/assets/images/icons/icons8-twitter.svg"),
+          link: "https://twitter.com/Favvvy04",
+          name: "Twitter Profile",
+        },
+      ],
+      navs: [
+        { name: "Home", id: "home" },
+        { name: "About", id: "about" },
+        {name: "Projects", id:"projects"},
+        {name:"Contact-Me", id:"contacts"},
+      ],
     };
   },
-};
+  methods: {
+    scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        window.scrollTo({
+          top: section.offsetTop,
+          behavior: "smooth",
+        });
+      }
+  },
+}
+}
 </script>
 <style scoped>
 * {
   margin: 0;
   padding: 0;
+}
+nav {
+  padding-right: 56px;
+  padding-top: 20px;
+}
+@media (max-width: 665px) {
+  nav{
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 86px;
+}
+@media (max-width: 665px) {
+  ul {
+    display: none;
+  }
+}
+ul li {
+  list-style-type: none;
+  font-size: 24px;
+  font-family: Barlow Condensed;
+  font-weight: 400;
+  color: rgb(214, 214, 214);
 }
 .hero {
   display: flex;
@@ -331,15 +402,15 @@ h4 {
   gap: 24px;
   padding-top: 24px;
 }
-@media  (min-width:400px) and  (max-width:650px){
-  .logos{
-    gap:12px;
-    padding-top:18px;
+@media (min-width: 400px) and (max-width: 650px) {
+  .logos {
+    gap: 12px;
+    padding-top: 18px;
   }
 }
-@media (max-width:399px){
-  .logos{
-    gap:10px;
+@media (max-width: 399px) {
+  .logos {
+    gap: 10px;
   }
 }
 .logo {
@@ -358,14 +429,14 @@ h4 {
 .logo-id {
   width: 120px;
 }
-@media (min-width:400px) and (max-width:650px){
-  .logo-id{
-    width:65px;
+@media (min-width: 400px) and (max-width: 650px) {
+  .logo-id {
+    width: 65px;
   }
 }
-@media (max-width:399px){
-  .logo-id{
-    width:43px;
+@media (max-width: 399px) {
+  .logo-id {
+    width: 43px;
   }
 }
 .logo span {
@@ -374,13 +445,13 @@ h4 {
   color: rgb(213, 212, 212);
   font-size: 20px;
 }
-@media (min-width:400px) and(max-width:650px){
-  .logo span{
+@media (min-width: 400px) and(max-width:650px) {
+  .logo span {
     font-size: 16px;
   }
 }
-@media (max-width:399px){
-  .logo span{
+@media (max-width: 399px) {
+  .logo span {
     font-weight: 400;
   }
 }
@@ -439,55 +510,63 @@ h5 {
   font-weight: 600;
 }
 @media (max-width: 799px) {
-  .project-desc  {
+  .project-desc {
     border-bottom: 2px solid rgb(213, 212, 212);
     font-size: 16px;
   }
 }
-.contacts{
+.contacts {
   background: rgb(43, 43, 246);
   margin-top: 72px;
 }
-h6{
-   font-size: 36px;
+h6 {
+  font-size: 36px;
   font-family: Barlow Condensed;
   font-weight: 600;
   text-align: center;
   padding-top: 24px;
-  color:rgb(213, 212, 212);
+  color: rgb(213, 212, 212);
 }
-.contact-section{
-  display:flex;
+.contact-section {
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap:24px;
+  gap: 24px;
 }
-@media(max-width:599px){
-    .contact-section{
-      gap:4px;
-        flex-direction: column;
-        /* padding-top:30px; */
-    }
+@media (max-width: 599px) {
+  .contact-section {
+    gap: 4px;
+    flex-direction: column;
+    /* padding-top:30px; */
+  }
 }
-.contact{
+.contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap:4px;
-  padding-top:36px;
-   padding-bottom:36px;
+  gap: 4px;
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
-.contact-desc{
-  color:rgb(213, 212, 212);
+.contact-desc {
+  color: rgb(213, 212, 212);
   text-decoration: none;
-  font-size:16px;
+  font-size: 16px;
   font-weight: 600;
   font-family: Barlow Condensed;
 }
-@media(max-width:599px){
-    .contact-desc{
-        font-weight:600;
-    }
+@media (max-width: 599px) {
+  .contact-desc {
+    font-weight: 600;
+  }
+}
+a {
+  text-decoration: none;
+  color:inherit
+}
+a:active {
+  text-decoration: underline;
+  color:rgb(43, 43, 246);
 }
 </style>

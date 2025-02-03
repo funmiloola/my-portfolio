@@ -1,6 +1,6 @@
 <template>
 <div class="about-section">
-    <div >
+    <div>
         <nav-section/>
      <about-section/>
     </div>
