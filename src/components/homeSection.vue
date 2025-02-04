@@ -120,7 +120,7 @@ export default {
           image: require("@/assets/images/icons/icons8-vuejs.svg"),
         },
         {
-          name:"TAILWINDCSS",
+          name:"TAILWIND",
           image: require("@/assets/images/icons/tailwindcss.svg"),
         }
       ],
@@ -380,6 +380,7 @@ h3 {
 @media (max-width: 650px) {
   .skills {
     padding-top: 24px;
+  
   }
 }
 h4 {
@@ -431,12 +432,12 @@ h4 {
 }
 @media (min-width: 400px) and (max-width: 650px) {
   .logo-id {
-    width: 65px;
+    width: 50px;
   }
 }
 @media (max-width: 399px) {
   .logo-id {
-    width: 43px;
+    width: 3g3px;
   }
 }
 .logo span {
@@ -511,6 +512,16 @@ h5 {
   font-size: 20px;
   font-family: Barlow Condensed;
   font-weight: 600;
+}
+@media (max-width:1015px) and (min-width:930px){
+  .project-desc{
+    font-size:18px;
+  }
+}
+@media (max-width:929px) and (min-width: 800px){
+  .project-desc{
+    font-size: 14px;
+  }
 }
 @media (max-width: 799px) {
   .project-desc {
