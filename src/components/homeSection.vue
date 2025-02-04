@@ -92,10 +92,9 @@
       <h6>Contact Me</h6>
       <div class="contact-section">
         <div v-for="(contact, index) in contacts" :key="index" class="contact">
-          <img :src="contact.image" alt="" class="contact-logo" />
-          <a :href="contact.link" target="_blank" class="contact-desc">{{
-            contact.name
-          }}</a>
+          <a :href="contact.link" target="_blank" class="contact-desc">
+         <img :src="contact.image" alt="" class="contact-logo" />
+          </a>
         </div>
       </div>
     </div>
@@ -160,6 +159,7 @@ export default {
         });
       }
   },
+  
 }
 }
 </script>
@@ -193,7 +193,7 @@ ul li {
   font-size: 24px;
   font-family: Barlow Condensed;
   font-weight: 400;
-  color: rgb(214, 214, 214);
+  color: #B0B0B0;
 }
 .hero {
   display: flex;
@@ -276,7 +276,7 @@ h1 {
   font-size: 56px;
   font-family: Barlow Condensed;
   font-weight: 600;
-  color: rgb(48, 48, 48);
+  color: #333333;
 }
 @media (min-width: 1600px) and (max-width: 2500px) {
   h1 {
@@ -304,13 +304,13 @@ h1 {
   }
 }
 h1 span {
-  color: rgb(43, 43, 246);
+  color: #013161;
 }
 h2 {
   font-size: 50px;
   font-family: Barlow Condensed;
   font-weight: 600;
-  color: rgb(48, 48, 48);
+  color:  #333333;
 }
 @media (min-width: 1600px) and (max-width: 2500px) {
   h2 {
@@ -338,14 +338,14 @@ h2 {
   }
 }
 .about-section {
-  background: rgb(43, 43, 246);
+  background:#001F3F;
   margin-top: 56px;
 }
 h3 {
   font-size: 56px;
   font-family: Barlow Condensed;
   font-weight: 600;
-  color: rgb(213, 212, 212);
+  color: #ffffff;
   text-align: center;
   padding-top: 24px;
 }
@@ -358,7 +358,7 @@ h3 {
   font-size: 24px;
   font-family: Barlow Condensed;
   font-weight: 400;
-  color: rgb(213, 212, 212);
+  color: #ffffff;
   text-align: center;
   padding-left: 12px;
   padding-right: 12px;
@@ -386,7 +386,7 @@ h4 {
   font-size: 28px;
   font-family: Barlow Condensed;
   font-weight: 600;
-  color: rgb(213, 212, 212);
+  color: #ffffff;
   text-align: center;
   padding-top: 24px;
 }
@@ -442,7 +442,7 @@ h4 {
 .logo span {
   font-family: Barlow Condensed;
   font-weight: 600;
-  color: rgb(213, 212, 212);
+  color: #ffffff;
   font-size: 20px;
 }
 @media (min-width: 400px) and(max-width:650px) {
@@ -461,6 +461,7 @@ h5 {
   font-weight: 600;
   text-align: center;
   padding-top: 72px;
+  color:#333333;
 }
 .project-section {
   display: flex;
@@ -468,6 +469,7 @@ h5 {
   gap: 64px;
   align-items: center;
   padding-top: 48px;
+  
 }
 @media (max-width: 799px) {
   .project-section {
@@ -483,6 +485,7 @@ h5 {
   justify-content: center;
   align-items: center;
   gap: 24px;
+  
 }
 .project-image {
   width: 320px;
@@ -504,19 +507,19 @@ h5 {
 }
 .project-desc {
   text-decoration: none;
-  color: black;
+  color: #333333;
   font-size: 20px;
   font-family: Barlow Condensed;
   font-weight: 600;
 }
 @media (max-width: 799px) {
   .project-desc {
-    border-bottom: 2px solid rgb(213, 212, 212);
+    border-bottom: 2px solid #ffffff;
     font-size: 16px;
   }
 }
 .contacts {
-  background: rgb(43, 43, 246);
+  background:#001F3F;
   margin-top: 72px;
 }
 h6 {
@@ -525,7 +528,7 @@ h6 {
   font-weight: 600;
   text-align: center;
   padding-top: 24px;
-  color: rgb(213, 212, 212);
+  color: #ffffff;
 }
 .contact-section {
   display: flex;
@@ -546,20 +549,8 @@ h6 {
   justify-content: center;
   align-items: center;
   gap: 4px;
-  padding-top: 36px;
-  padding-bottom: 36px;
-}
-.contact-desc {
-  color: rgb(213, 212, 212);
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: Barlow Condensed;
-}
-@media (max-width: 599px) {
-  .contact-desc {
-    font-weight: 600;
-  }
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 a {
   text-decoration: none;
@@ -567,6 +558,6 @@ a {
 }
 a:active {
   text-decoration: underline;
-  color:rgb(43, 43, 246);
+  color:#001F3F;
 }
 </style>
