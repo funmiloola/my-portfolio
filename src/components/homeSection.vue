@@ -435,9 +435,14 @@ h4 {
     width: 50px;
   }
 }
-@media (max-width: 399px) {
+@media (max-width: 399px) and (min-width:350px) {
   .logo-id {
-    width: 3g3px;
+    width: 33px;
+  }
+}
+@media(max-width:349px){
+  .logo-id { 
+    width:15px;
   }
 }
 .logo span {
@@ -453,6 +458,7 @@ h4 {
 }
 @media (max-width: 399px) {
   .logo span {
+    font-size:15px;
     font-weight: 400;
   }
 }
