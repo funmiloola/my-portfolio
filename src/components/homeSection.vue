@@ -7,6 +7,7 @@
         </li>
       </ul>
     </nav>
+    <div class="sub-section">
     <div class="hero-section">
       <div class="hero">
         <h1>Hi, I am <span>FAVOUR</span></h1>
@@ -46,12 +47,12 @@
             alt=""
             class="project-image"
           />
-                    <a href="https://space-tourism-4jxb.onrender.com/" target="_blank"  class="project-desc">Space tourism website</a>
+                    <a href="https://space-tourism-4jxb.onrender.com/" target="_blank"  class="project-desc">Live Url</a>
           <a
             href="https://github.com/funmiloola/space-tourism-website-design.git"
             target="_blank"
             class="project-desc"
-            >Space tourism website repository</a
+            >GitHub Repo</a
           >
         </div>
         <div class="project">
@@ -61,13 +62,13 @@
             class="project-image"
           />
           <a href="https://ecommerce-project-gtcm.onrender.com/" target="_blank" class="project-desc">
-           Ecommerce single page
+           Live Url
           </a>
           <a
             href="https://github.com/funmiloola/Ecommerce-project.git"
             target="_blank"
             class="project-desc"
-            >Ecommerce single page repository</a
+            >GitHub Repo</a
           >
         </div>
         <div class="project">
@@ -77,13 +78,13 @@
             class="project-image"
           />
           <a href="https://freshfarm-product-page.onrender.com/" target="_blank" class="project-desc">
-          Freshfarm landing page
+          Live Url
           </a>
           <a
             href="https://github.com/funmiloola/freahfarm-product-deisgn.git"
             target="_blank"
             class="project-desc"
-            >Freshfarm landing page repository</a
+            >GitHub Repo</a
           >
         </div>
       </div>
@@ -99,6 +100,7 @@
       </div>
     </div>
     </section>
+    </div>
   </div>
 </template>
 <script>
@@ -128,17 +130,15 @@ export default {
         {
           image: require("@/assets/images/icons/icons8-instagram-logo.svg"),
           link: "https://www.instagram.com/fun.mii_?igsh=NXJ4ZG5weGE5d2ty&utm_source=qr",
-          name: "Instagram Profile",
         },
         {
           image: require("@/assets/images/icons/icons8-linkedin.svg"),
           link: "https://www.linkedin.com/in/adebiyi-favour-7a7845240/",
-          name: "LinkedIn Profile",
         },
         {
           image: require("@/assets/images/icons/icons8-twitter.svg"),
           link: "https://twitter.com/Favvvy04",
-          name: "Twitter Profile",
+          
         },
       ],
       navs: [
@@ -171,6 +171,7 @@ export default {
 nav {
   padding-right: 56px;
   padding-top: 20px;
+  
 }
 @media (max-width: 665px) {
   nav{
@@ -182,6 +183,7 @@ ul {
   display: flex;
   justify-content: flex-end;
   gap: 86px;
+
 }
 @media (max-width: 665px) {
   ul {
@@ -193,7 +195,7 @@ ul li {
   font-size: 24px;
   font-family: Barlow Condensed;
   font-weight: 400;
-  color: #B0B0B0;
+  color: #333333; 
 }
 .hero {
   display: flex;
@@ -515,13 +517,13 @@ h5 {
 .project-desc {
   text-decoration: none;
   color: #333333;
-  font-size: 20px;
+  font-size: 18px;
   font-family: Barlow Condensed;
   font-weight: 600;
 }
 @media (max-width:1015px) and (min-width:930px){
   .project-desc{
-    font-size:18px;
+    font-size:16px;
   }
 }
 @media (max-width:929px) and (min-width: 800px){
